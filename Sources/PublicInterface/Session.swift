@@ -8,7 +8,7 @@ import Foundation
 public struct Session: Codable {
     // TODO: handle protocol version
     public let url: WCURL
-    public let dAppInfo: DAppInfo
+    public var dAppInfo: DAppInfo
     public var walletInfo: WalletInfo?
 
     public init(url: WCURL, dAppInfo: DAppInfo, walletInfo: WalletInfo?) {
@@ -20,7 +20,7 @@ public struct Session: Codable {
     public struct DAppInfo: Codable, Equatable {
         public let peerId: String
         public let peerMeta: ClientMeta
-        public let chainId: Int?
+        public var chainId: Int?
         public let approved: Bool?
 
         public init(peerId: String, peerMeta: ClientMeta, chainId: Int? = nil, approved: Bool? = nil) {
